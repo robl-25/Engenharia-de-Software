@@ -9,7 +9,6 @@ sugestões de matérias a serem escolhidas e descrição geral das matérias).
 Nome | R.A.
 -----|-----
 Mariane Coelho Robl | 86902
-Nathan de Melo Cruz | 86942
 Ellen Priscila Borges Oliveira | 69554
 Juliana de Paula Nader | 86301
 Jonathan J. suenaga | 75144
