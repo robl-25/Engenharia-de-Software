@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itBusca"
+        android:title="@string/lbl_busca"
+        android:icon="@drawable/sussaicon"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/itPreferencias"
+        app:showAsAction="never"
+        android:title="Preferencias"/>
+
+    <item
+        android:id="@+id/itAjuda"
+        app:showAsAction="never"
+        android:title="Ajuda"/>
+
+    <item
+        android:id="@+id/itSair"
+        app:showAsAction="never"
+        android:title="Sair"/>
+
+
+</menu>

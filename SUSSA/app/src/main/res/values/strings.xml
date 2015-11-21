@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SUSSA</string>
+    <string name="Titulo">SUSSA\nSistema Unificado de Sanidade e Selecao academica</string>
+    <string name="Cadastrar"><u>Cadastrar</u></string>
+    <string name="lbl_Sobre"><u>Sobre</u></string>
+    <string name="lbl_Perfil">P</string>
+    <string name="lbl_materias">M</string>
+    <string name="lbl_professores">P</string>
+    <string name="lbl_arquivos">A</string>
+    <string name="lbl_editarCampos"><u>Editar Campos</u></string>
+    <string name="lbl_progresso">Progresso:</string>
+    <string name="lbl_titlePerfil"><b>SUSSA Perfil</b></string>
+    <string name="lbl_titleMatriz">SUSSA Matriz</string>
+    <string name="lbl_titleProfessores">SUSSA Professores</string>
+    <string name="lbl_titleArquivos">SUSSA Arquivos</string>
+    <string name="lbl_busca">Busca</string>
+    <string name="lbl_progressopadrao">Progresso\n(Curso Padrao)</string>
+    <string name="lbl_matrizesInterativas"><u>Matrizes Interativas</u></string>
+    <string name="lbl_planejador"><u>Planejador de Disciplinas</u></string>
+    <string name="lbl_progressoCursos"><u>Progresso dos Cursos</u></string>
+    <string name="lbl_curso">Curso</string>
+    <string name="lbl_changeMatriz">Alterar Matriz</string>
+    <string name="lbl_unidadescurriculares">UNIDADES CURRICULARES</string>
+    <string name="lbl_semestre">SEMESTRE</string>
+    <string name="lbl_primeiro">PRIMEIRO</string>
+    <string name="lbl_segundo">SEGUNDO</string>
+    <string name="lbl_interdisciplinar">INTERDISIPLINAR</string>
+    <string name="lbl_eletiva">ELETIVA</string>
+    <string name="title_activity_fmatriz_interativa">FMatrizInterativa</string>
+</resources>

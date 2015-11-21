@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_below="@id/llMudarMatriz"
+    android:layout_width="1000dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="fill"
+    android:background="#100f0f"
+    android:layout_marginTop="20dp">
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/lbl_semestre"
+            android:id="@+id/button"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/lbl_unidadescurriculares"
+            android:id="@+id/button"
+            android:textStyle="bold"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+            android:layout_weight="5"
+            android:layout_span="5" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:baselineAligned="false">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/lbl_primeiro"
+            android:id="@+id/button"
+            android:textStyle="bold"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="C1"
+            android:id="@+id/btC1"
+            android:background="@color/salmon"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="CTS"
+            android:background="@color/salmon"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:text="LP"
+            android:background="@color/salmon"
+            android:layout_margin="2dp"
+            android:id="@+id/button2"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="QGT"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:background="@color/salmon"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:text="FBM"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:background="@color/salmon"
+            android:layout_margin="2dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="@string/lbl_segundo"
+            android:id="@+id/button"
+            android:textStyle="bold"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="FEMEC"
+            android:id="@+id/btFM"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@color/salmon" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="CTSA"
+            android:id="@+id/button"
+            android:background="@color/salmon"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="TERCEIRO"
+            android:id="@+id/button"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/lbl_interdisciplinar"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@color/salmon"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:background="@color/pink"
+            android:layout_margin="2dp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="QUARTO"
+            android:id="@+id/button"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/lbl_interdisciplinar"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@color/salmon"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="@string/lbl_eletiva"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:id="@+id/button"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:text="@string/lbl_eletiva"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:id="@+id/button2"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="QUINTO"
+            android:id="@+id/button"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/lbl_interdisciplinar"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@color/salmon"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:text="SEXTO"
+            android:id="@+id/button"
+            android:background="@color/white"
+            android:layout_margin="2dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/lbl_interdisciplinar"
+            android:id="@+id/button2"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:background="@color/salmon"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:text="@string/lbl_eletiva"
+            android:id="@+id/button2"
+            android:background="@color/pink"
+            android:layout_margin="2dp"
+            android:layout_weight="1"/>
+
+    </TableRow>
+</TableLayout>

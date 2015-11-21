@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#62cf4a"
+        android:id="@+id/tbBottom"
+        android:layout_gravity="center"
+    />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbTop"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolBarTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/white"
+    />
+
+</RelativeLayout>

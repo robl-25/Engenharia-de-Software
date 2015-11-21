@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/itProfile"
+        android:title="@string/lbl_Perfil"
+        app:showAsAction="always"
+        android:icon="@drawable/sussaicon" />
+
+    <item
+        android:id="@+id/itMatriz"
+        android:title="@string/lbl_materias"
+        app:showAsAction="always"
+        android:icon="@drawable/gdisciplinas"/>
+
+    <item
+        android:id="@+id/itProfessores"
+        android:title="@string/lbl_professores"
+        app:showAsAction="always"
+        android:icon="@drawable/professor"/>
+
+
+    <item
+        android:id="@+id/itArquivos"
+        android:title="@string/lbl_arquivos"
+        app:showAsAction="always"
+        android:icon="@drawable/arquivos"/>
+
+
+
+
+
+</menu>
