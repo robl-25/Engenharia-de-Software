@@ -10,31 +10,18 @@ xmlns:tools="http://schemas.android.com/tools"
     android:background="#44FF44">
 
     <include
-        android:id="@+id/tToolbar"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        layout="@layout/my_toolbars" />
-
-    <!--
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tbTop"
+        android:id ="@+id/topToolbar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ToolBarTheme"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@color/white"/>
+        layout="@layout/top_toolbar" />
 
-
-    <android.support.v7.widget.Toolbar
-        android:layout_height="wrap_content"
+    <include
+        android:id ="@+id/bottomToolbar"
+        layout="@layout/bottom_toolbar"
         android:layout_alignParentBottom="true"
-        android:layout_width="fill_parent"
-        android:minHeight="?attr/actionBarSize"
-        android:background="#62cf4a"
-        android:id="@+id/tbBottom"/>
-    -->
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="wrap_content" />
+
 
     <!--Toolbar-->
 
@@ -44,8 +31,8 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="false"
-        android:layout_alignParentStart="false"
         android:gravity="center_vertical">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,6 +99,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
         </GridLayout>
     </RelativeLayout>
+`
 
 
 
