@@ -30,6 +30,7 @@
         <activity
             android:name=".MatrizInterativa"
             android:label="@string/title_activity_fmatriz_interativa"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>

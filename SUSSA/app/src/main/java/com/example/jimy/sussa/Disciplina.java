@@ -7,15 +7,15 @@ import android.widget.Button;
 /**
  * Created by Jimy on 16/11/15.
  */
-public class Disciplina extends Button{
+//// TODO: 22/11/15 fazer disciplina ser um botao dinamico 
+public class Disciplina{
     private int id_disciplina;
     private String nome;
     private boolean disciplinaFeita;
 
 
 
-    public Disciplina(Context context, int id_disciplina, String nome, boolean disciplinaFeita) {
-        super(context);
+    public Disciplina(int id_disciplina, String nome, boolean disciplinaFeita) {
         this.id_disciplina = id_disciplina;
         this.nome = nome;
         this.disciplinaFeita = disciplinaFeita;

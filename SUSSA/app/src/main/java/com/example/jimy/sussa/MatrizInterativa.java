@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class MatrizInterativa extends AppCompatActivity implements View.OnClickListener{
     LinearLayout llMatrizContainer;
-    Button btEditarMatriz;
+    Button btEditarMatriz, btFullsize;
     BDDisciplinas bddisciplinas;
     TextView tvMatrizAtual;
 
@@ -26,6 +26,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
     
     //// TODO: 22/11/15 Criar matriz dinamica 
+    //// TODO: 22/11/15 Falta criar uma fragment para legendas 
     MatrizBCT_fragment mbct = new MatrizBCT_fragment();
     MatrizBCC_fragment mbcc = new MatrizBCC_fragment();
 
@@ -38,7 +39,10 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     private ScaleGestureDetector mSGD;
     GestureDetector gestureDetector;
     
-    //// TODO: 22/11/15 Bug: Toda vez que muda orientacao, adiciona uma tabela ao Container (faz o scrollview ficar repetindo) 
+    //// TODO: 22/11/15 Bug: Toda vez que muda orientacao, adiciona uma tabela ao Container (faz o scrollview ficar repetindo)
+    //// TODO: 22/11/15 Bug: Toda vez que muda orientacao, fragment se reinicia e nao consigo mais editar. Talvez precise tornar a tabela dinamica. Por hora deixar fixo orientacao horizontal no android manifest
+    //// TODO: 22/11/15 Problema: Ao trocar o Curso, a matriz atual eh redefinida. Solucao provavel eh tabela dinamica
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
 
         tvMatrizAtual = (TextView) findViewById(R.id.tvMatrizAtual);
         btEditarMatriz = (Button) findViewById(R.id.btEditarMatriz);
+        btFullsize = (Button) findViewById(R.id.btFullScreen);
         llMatrizContainer = (LinearLayout)findViewById(R.id.llMatrizContainer);
 
         //setando o local onde a matriz BCT vai ser posicionada
@@ -55,6 +60,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
 
         //// TODO: 18/11/15 Mesclar spinner com tvMatrizAtual
         btEditarMatriz.setOnClickListener(this);
+        btFullsize.setOnClickListener(this);
         tvMatrizAtual.setOnClickListener(this);
 
         gestureDetector = new GestureDetector(this, new GestureListener());
@@ -65,6 +71,13 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     //resizing methods
     public void sizeToDefault() {
         ScaleAnimation defaultScaleAnimation = new ScaleAnimation(1f, 1f, 1f, 1f);
+        defaultScaleAnimation.setDuration(0);
+        defaultScaleAnimation.setFillAfter(true);
+        llMatrizContainer.startAnimation(defaultScaleAnimation);
+    }
+
+    public void sizeToOverview() {
+        ScaleAnimation defaultScaleAnimation = new ScaleAnimation(0.5f, 0.5f, 0.5f, 0.5f);
         defaultScaleAnimation.setDuration(0);
         defaultScaleAnimation.setFillAfter(true);
         llMatrizContainer.startAnimation(defaultScaleAnimation);
@@ -130,6 +143,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
             case R.id.btEditarMatriz:
                 //POSSIBILITAR EDICAO
                 sizeToDefault();
+                btFullsize.setEnabled(false);
                 if(edicao == 0) {
                     edicao = 1;
                     btEditarMatriz.setText("VISUALIZAR");
@@ -145,6 +159,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
                 //MODO DE LEITURA
                 else{
                     edicao = 0;
+                    btFullsize.setEnabled(true);
                     btEditarMatriz.setText("EDITAR MATRIZ");
                     switch (count) {
                         case 0:
@@ -155,6 +170,10 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
                             break;
                     }
                 }
+                break;
+            case R.id.btFullScreen:
+                sizeToOverview();
+                break;
         }
     }
 

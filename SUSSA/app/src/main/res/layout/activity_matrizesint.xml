@@ -25,7 +25,8 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/llMudarMatriz">
+                android:id="@+id/llMudarMatriz"
+                android:weightSum="1">
 
                 <Button
                     android:layout_width="150dp"
@@ -35,13 +36,22 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="5dp" />
 
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FS"
+                    android:id="@+id/btFullScreen"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MATRIZ_BCT"
                     android:id="@+id/tvMatrizAtual"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="70dp"
                     android:textSize="30dp" />
 
                 <Spinner
