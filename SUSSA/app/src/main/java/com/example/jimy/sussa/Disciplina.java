@@ -1,14 +1,21 @@
 package com.example.jimy.sussa;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.widget.Button;
+
 /**
  * Created by Jimy on 16/11/15.
  */
-public class Disciplina {
+public class Disciplina extends Button{
     private int id_disciplina;
     private String nome;
     private boolean disciplinaFeita;
 
-    public Disciplina(int id_disciplina, String nome, boolean disciplinaFeita) {
+
+
+    public Disciplina(Context context, int id_disciplina, String nome, boolean disciplinaFeita) {
+        super(context);
         this.id_disciplina = id_disciplina;
         this.nome = nome;
         this.disciplinaFeita = disciplinaFeita;
@@ -37,5 +44,6 @@ public class Disciplina {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 
 }

@@ -1,6 +1,5 @@
 package com.example.jimy.sussa;
 
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,19 +24,21 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
 
     FragmentManager fragmentManager = getSupportFragmentManager();
     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+    
+    //// TODO: 22/11/15 Criar matriz dinamica 
     MatrizBCT_fragment mbct = new MatrizBCT_fragment();
     MatrizBCC_fragment mbcc = new MatrizBCC_fragment();
 
 
     int count = 0;      //indice de referencia ao fragment atual
-    int edicao = 1;     //indice de referencia ao modo de acesso da matriz
+    int edicao = 0;     //indice de referencia ao modo de acesso da matriz
 
     //Define GestureScale Parameters
     private float mScale = 1f;
     private ScaleGestureDetector mSGD;
     GestureDetector gestureDetector;
-
+    
+    //// TODO: 22/11/15 Bug: Toda vez que muda orientacao, adiciona uma tabela ao Container (faz o scrollview ficar repetindo) 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,27 +62,37 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     }
 
 
+    //resizing methods
+    public void sizeToDefault() {
+        ScaleAnimation defaultScaleAnimation = new ScaleAnimation(1f, 1f, 1f, 1f);
+        defaultScaleAnimation.setDuration(0);
+        defaultScaleAnimation.setFillAfter(true);
+        llMatrizContainer.startAnimation(defaultScaleAnimation);
+    }
+
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
         @Override
-        public boolean onScale(ScaleGestureDetector detector) {
-            float scale = 1 - detector.getScaleFactor();
+        public boolean onScale(ScaleGestureDetector detector)
+        {
+            if(edicao == 0) {
+                float scale = 1 - detector.getScaleFactor();
 
-            float prevScale = mScale;
-            mScale += scale;
+                float prevScale = mScale;
+                mScale += scale;
 
-            if (mScale < 0.1f) // Minimum scale condition:
-                mScale = 0.1f;
+                if (mScale < 0.1f) // Minimum scale condition:
+                    mScale = 0.1f;
 
-            if (mScale > 10f) // Maximum scale condition:
-                mScale = 10f;
+                if (mScale > 10f) // Maximum scale condition:
+                    mScale = 10f;
 
-            ScaleAnimation scaleAnimation = new ScaleAnimation(1f / prevScale, 1f / mScale, 1f / prevScale, 1f / mScale, detector.getFocusX(), detector.getFocusY());
-            scaleAnimation.setDuration(0);
-            scaleAnimation.setFillAfter(true);
-            ScrollView layout = (ScrollView) findViewById(R.id.svMatrizInterativa);
-            llMatrizContainer.startAnimation(scaleAnimation);
-            //layout.startAnimation(scaleAnimation);
-
+                ScaleAnimation scaleAnimation = new ScaleAnimation(1f / prevScale, 1f / mScale, 1f / prevScale, 1f / mScale, detector.getFocusX(), detector.getFocusY());
+                scaleAnimation.setDuration(0);
+                scaleAnimation.setFillAfter(true);
+                llMatrizContainer.startAnimation(scaleAnimation);
+            }else{
+                Toast.makeText(getApplicationContext(),"Mude para o modo de visualizacao para redimensionar",Toast.LENGTH_SHORT).show();
+            }
             return true;
         }
     }
@@ -119,6 +129,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btEditarMatriz:
                 //POSSIBILITAR EDICAO
+                sizeToDefault();
                 if(edicao == 0) {
                     edicao = 1;
                     btEditarMatriz.setText("VISUALIZAR");
