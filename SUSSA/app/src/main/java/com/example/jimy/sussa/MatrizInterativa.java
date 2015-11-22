@@ -1,17 +1,25 @@
 package com.example.jimy.sussa;
 
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.HashMap;
 
 public class MatrizInterativa extends AppCompatActivity implements View.OnClickListener{
+    LinearLayout llMatrizContainer;
     Button btEditarMatriz;
     BDDisciplinas bddisciplinas;
     TextView tvMatrizAtual;
@@ -22,8 +30,14 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     MatrizBCT_fragment mbct = new MatrizBCT_fragment();
     MatrizBCC_fragment mbcc = new MatrizBCC_fragment();
 
+
     int count = 0;      //indice de referencia ao fragment atual
-    int edicao = 0;     //indice de referencia ao modo de acesso da matriz
+    int edicao = 1;     //indice de referencia ao modo de acesso da matriz
+
+    //Define GestureScale Parameters
+    private float mScale = 1f;
+    private ScaleGestureDetector mSGD;
+    GestureDetector gestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +45,9 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
         bddisciplinas = new BDDisciplinas();
         setContentView(R.layout.activity_matrizesint);
 
-        tvMatrizAtual = (TextView)findViewById(R.id.tvMatrizAtual);
-        btEditarMatriz = (Button)findViewById(R.id.btEditarMatriz);
+        tvMatrizAtual = (TextView) findViewById(R.id.tvMatrizAtual);
+        btEditarMatriz = (Button) findViewById(R.id.btEditarMatriz);
+        llMatrizContainer = (LinearLayout)findViewById(R.id.llMatrizContainer);
 
         //setando o local onde a matriz BCT vai ser posicionada
         fragmentTransaction.add(R.id.llMatrizContainer, mbct);
@@ -41,7 +56,60 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
         //// TODO: 18/11/15 Mesclar spinner com tvMatrizAtual
         btEditarMatriz.setOnClickListener(this);
         tvMatrizAtual.setOnClickListener(this);
-     }
+
+        gestureDetector = new GestureDetector(this, new GestureListener());
+        mSGD = new ScaleGestureDetector(this, new ScaleListener());
+    }
+
+
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector detector) {
+            float scale = 1 - detector.getScaleFactor();
+
+            float prevScale = mScale;
+            mScale += scale;
+
+            if (mScale < 0.1f) // Minimum scale condition:
+                mScale = 0.1f;
+
+            if (mScale > 10f) // Maximum scale condition:
+                mScale = 10f;
+
+            ScaleAnimation scaleAnimation = new ScaleAnimation(1f / prevScale, 1f / mScale, 1f / prevScale, 1f / mScale, detector.getFocusX(), detector.getFocusY());
+            scaleAnimation.setDuration(0);
+            scaleAnimation.setFillAfter(true);
+            ScrollView layout = (ScrollView) findViewById(R.id.svMatrizInterativa);
+            llMatrizContainer.startAnimation(scaleAnimation);
+            //layout.startAnimation(scaleAnimation);
+
+            return true;
+        }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        super.dispatchTouchEvent(event);
+        mSGD.onTouchEvent(event);
+        gestureDetector.onTouchEvent(event);
+        return gestureDetector.onTouchEvent(event);
+    }
+
+
+    private class GestureListener extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onDown(MotionEvent e) {
+            return true;
+        }
+
+        // event when double tap occurs
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            // double tap fired.
+            return true;
+        }
+    }
+
 
     @Override
     public void onClick(View v) {
