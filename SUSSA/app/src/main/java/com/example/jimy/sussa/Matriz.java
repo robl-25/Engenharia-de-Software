@@ -57,11 +57,12 @@ public class Matriz extends AppCompatActivity implements View.OnClickListener{
 
         //Tratando o tbtop como se fosse o AcionBar padrao, portanto precisa implementar metodo onCreateOptionsMenu
         setSupportActionBar(tbTop);
-
+        
+        //// TODO: 22/11/15 centralizar malditos icones 
         getSupportActionBar().setTitle("SUSSA_MATRIZES");
         tbBottom.inflateMenu(R.menu.bottom_menu);
-
-
+        tbBottom.setContentInsetsAbsolute(0,0);
+        
         tbBottom.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
