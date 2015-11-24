@@ -26,7 +26,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
     
     //// TODO: 22/11/15 Criar matriz dinamica 
-    //// TODO: 22/11/15 Falta criar uma fragment para legendas 
+    //// TODO: 22/11/15 Falta criar uma fragment para legendas
     MatrizBCT_fragment mbct = new MatrizBCT_fragment();
     MatrizBCC_fragment mbcc = new MatrizBCC_fragment();
 
@@ -56,6 +56,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
 
         //setando o local onde a matriz BCT vai ser posicionada
         fragmentTransaction.add(R.id.llMatrizContainer, mbct);
+        sizeToOverview();
         fragmentTransaction.commit();
 
         //// TODO: 18/11/15 Mesclar spinner com tvMatrizAtual
@@ -160,6 +161,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
                 else{
                     edicao = 0;
                     btFullsize.setEnabled(true);
+                    btFullsize.performClick();
                     btEditarMatriz.setText("EDITAR MATRIZ");
                     switch (count) {
                         case 0:

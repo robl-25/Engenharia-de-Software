@@ -58,7 +58,7 @@ public class Matriz extends AppCompatActivity implements View.OnClickListener{
         //Tratando o tbtop como se fosse o AcionBar padrao, portanto precisa implementar metodo onCreateOptionsMenu
         setSupportActionBar(tbTop);
         
-        //// TODO: 22/11/15 centralizar malditos icones 
+        //// TODO: 22/11/15 centralizar malditos icones
         getSupportActionBar().setTitle("SUSSA_MATRIZES");
         tbBottom.inflateMenu(R.menu.bottom_menu);
         tbBottom.setContentInsetsAbsolute(0,0);
@@ -78,6 +78,7 @@ public class Matriz extends AppCompatActivity implements View.OnClickListener{
                         break;
                     case R.id.itProfessores:
                         Toast.makeText(getApplicationContext(), "Carregando tela de Professores", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Professores.class));
                         break;
                     case R.id.itArquivos:
                         Toast.makeText(getApplicationContext(), "Carregando tela de Arquivos", Toast.LENGTH_SHORT).show();

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="SpinnerProfessores">
+        <item name="Alfabetica">"Ordem Alfabetica"</item>
+        <item name="Disciplinas">"Disciplinas</item>
+        <item name="Votos">"Mais votados"</item>
+    </array>
+</resources>

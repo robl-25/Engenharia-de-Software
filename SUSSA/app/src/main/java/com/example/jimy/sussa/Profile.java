@@ -84,11 +84,13 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                         Toast.makeText(getApplicationContext(),"Carregando tela de perfil",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.itMatriz:
+                        //// TODO: 23/11/15 Bug: icone prevalece na proxima activity..
                         Toast.makeText(getApplicationContext(),"Carregando tela de gerencia de matrizes",Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), Matriz.class));
                         break;
                     case R.id.itProfessores:
                         Toast.makeText(getApplicationContext(),"Carregando tela de Professores",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Professores.class));
                         break;
                     case R.id.itArquivos:
                         Toast.makeText(getApplicationContext(),"Carregando tela de Arquivos",Toast.LENGTH_SHORT).show();

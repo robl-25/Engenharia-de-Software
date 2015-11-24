@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" >
+        <activity
+            android:name=".Login"
+            android:windowSoftInputMode="stateHidden"
+            >
         </activity>
         <activity android:name=".Cadastro" >
         </activity>
@@ -32,6 +35,10 @@
             android:label="@string/title_activity_fmatriz_interativa"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".Professores"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
     </application>
 

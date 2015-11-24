@@ -80,4 +80,14 @@ public class MatrizBCT_fragment extends Fragment implements View.OnClickListener
                 }
         return true;
     }
+
+    public float progressoBCT(){
+        float progressoBCT = 0;
+        for (Button b:arrayMateriasBCT){
+            if(b.getBackground().equals(R.color.lightblue)){
+                progressoBCT++;
+            }
+        }
+        return (progressoBCT/arrayMateriasBCT.size())*100;
+    }
 }

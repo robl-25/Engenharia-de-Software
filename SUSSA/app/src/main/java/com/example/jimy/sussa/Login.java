@@ -3,6 +3,7 @@ package com.example.jimy.sussa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
     private Button bEntrar;
     private TextView tvCadastrar;
+    private TextView tvTitulo;
 
     EditText etlogin, etsenha;
     UserBuilder userBuilder = new UserBuilder();
@@ -22,11 +24,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         etlogin = (EditText)findViewById(R.id.etLogin);
         etsenha = (EditText)findViewById(R.id.etSenha);
 
         bEntrar = (Button)findViewById(R.id.bEntrar);
         tvCadastrar = (TextView)findViewById(R.id.tvCadastrar);
+        tvTitulo = (TextView)findViewById(R.id.tvTitulo);
+
+        tvTitulo.setGravity(Gravity.CENTER);
 
         bEntrar.setOnClickListener(this);
         tvCadastrar.setOnClickListener(this);
@@ -58,6 +65,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 }
                 break;
             case R.id.tvCadastrar:
+                Toast.makeText(this,"Redirecionando a tela de cadastro", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,Cadastro.class));
         }
     }

@@ -9,4 +9,6 @@ public  class Usuario {
             email = "teste@unifesp.br",
             senha = "testeteste",
             curso = "BCTeste";
+
+
 }

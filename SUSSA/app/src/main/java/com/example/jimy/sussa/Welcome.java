@@ -39,7 +39,7 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener{
                 startActivity(new Intent(this, Login.class));
                 break;
             case R.id.tvSobre:
-                Toast.makeText(this,"Abrindo arquivos de informacoes do projeto",Toast.LENGTH_SHORT);
+                Toast.makeText(this,"Abrindo arquivos de informacoes do projeto",Toast.LENGTH_SHORT).show();
                 break;
         }
     }

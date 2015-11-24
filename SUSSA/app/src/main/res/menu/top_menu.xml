@@ -7,7 +7,7 @@
     <item
         android:id="@+id/itBusca"
         android:title="@string/lbl_busca"
-        android:icon="@drawable/sussaicon"
+        android:icon="@drawable/searchicon"
         app:showAsAction="always"/>
 
     <item
