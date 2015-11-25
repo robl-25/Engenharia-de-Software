@@ -111,14 +111,14 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="251dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp">
 
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="180dp"
-                            android:id="@+id/imageView2"
+                            android:id="@+id/ivBeakman"
                             android:src="@drawable/beakman"
                             android:layout_alignParentLeft="false"
                             android:layout_alignParentRight="false"
@@ -129,94 +129,147 @@
                             android:adjustViewBounds="true"
                             />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivBeakman"
+                            android:id="@+id/tvBeakman"
+                            android:text="@string/lbl_Beakman"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp" />
                         <RatingBar
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/ratingBar"
-                            android:layout_below="@+id/imageView2"
+                            android:layout_below="@+id/tvBeakman"
                             android:layout_centerInParent="true"
                             android:rating="4"
-                            android:progressTint="#b1fdf22c" /> "
+                            android:progressTint="#b1fdf22c"
+                            android:layout_marginTop="5dp" /> "
 
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="251dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp">
 
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="180dp"
-                            android:scaleType="fitXY"
-                            android:id="@+id/imageView2"
+                            android:id="@+id/ivBrown"
                             android:src="@drawable/brown"
                             android:layout_alignParentLeft="false"
                             android:layout_alignParentRight="false"
                             android:layout_alignWithParentIfMissing="false"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentTop="true" />
+                            android:layout_alignParentTop="true"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
+                            />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivBrown"
+                            android:id="@+id/tvBrown"
+                            android:text="@string/lbl_Brown"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp" />
                         <RatingBar
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/ratingBar"
-                            android:layout_below="@+id/imageView2"
-                            android:layout_centerInParent="true" /> "
+                            android:layout_below="@+id/tvBrown"
+                            android:layout_centerInParent="true"
+                            android:rating="4"
+                            android:progressTint="#b1fdf22c"
+                            android:layout_marginTop="5dp" /> "
 
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="251dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp">
 
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="180dp"
-                            android:scaleType="fitXY"
-                            android:id="@+id/imageView2"
+                            android:id="@+id/ivCerebro"
                             android:src="@drawable/cerebro"
                             android:layout_alignParentLeft="false"
                             android:layout_alignParentRight="false"
                             android:layout_alignWithParentIfMissing="false"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentTop="true" />
+                            android:layout_alignParentTop="true"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
+                            />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivCerebro"
+                            android:id="@+id/tvCerebro"
+                            android:text="@string/lbl_Cerebro"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp" />
                         <RatingBar
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/ratingBar"
-                            android:layout_below="@+id/imageView2"
-                            android:layout_centerInParent="true" /> "
+                            android:layout_below="@+id/tvCerebro"
+                            android:layout_centerInParent="true"
+                            android:rating="4"
+                            android:progressTint="#b1fdf22c"
+                            android:layout_marginTop="5dp" /> "
 
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="251dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp">
 
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="180dp"
-                            android:scaleType="fitXY"
-                            android:id="@+id/imageView2"
+                            android:id="@+id/ivFrink"
                             android:src="@drawable/frink"
                             android:layout_alignParentLeft="false"
                             android:layout_alignParentRight="false"
                             android:layout_alignWithParentIfMissing="false"
                             android:layout_centerInParent="true"
-                            android:layout_alignParentTop="true" />
+                            android:layout_alignParentTop="true"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
+                            />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivFrink"
+                            android:id="@+id/tvFrink"
+                            android:text="Prof.Dr.John Frink"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="20dp"
+                            android:layout_marginTop="5dp" />
                         <RatingBar
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/ratingBar"
-                            android:layout_below="@+id/imageView2"
-                            android:layout_centerInParent="true" /> "
+                            android:layout_below="@+id/tvFrink"
+                            android:layout_centerInParent="true"
+                            android:rating="4"
+                            android:progressTint="#b1fdf22c"
+                            android:layout_marginTop="5dp" /> "
 
                     </RelativeLayout>
+
 
 
 

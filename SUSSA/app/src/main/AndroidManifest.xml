@@ -17,8 +17,7 @@
         </activity>
         <activity
             android:name=".Login"
-            android:windowSoftInputMode="stateHidden"
-            >
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity android:name=".Cadastro" >
         </activity>
@@ -36,9 +35,12 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Professores"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name=".Professores"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity android:name=".Arquivos" >
         </activity>
     </application>
 

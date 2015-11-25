@@ -28,4 +28,8 @@
     <string name="lbl_eletiva">ELETIVA</string>
     <string name="title_activity_fmatriz_interativa">FMatrizInterativa</string>
     <string name="lbl_profdestaque"><b>Professores\nem Destaque</b></string>
+    <string name="lbl_Beakman">Prof.Dr.Beakman</string>
+    <string name="lbl_Brown">Prof.Dr.Brown</string>
+    <string name="lbl_Cerebro">Prof.Dr.Cerebro</string>
+    <string name="lbl_Upload">Upload</string>
 </resources>
