@@ -6,7 +6,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context="com.example.jimy.sussa.Professores"
-    android:background="@color/brightgreen">
+    android:background="@color/lightblue">
 
     <include
     android:id ="@+id/topToolbar"
