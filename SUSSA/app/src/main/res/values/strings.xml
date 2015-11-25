@@ -27,5 +27,5 @@
     <string name="lbl_interdisciplinar">INTERDISIPLINAR</string>
     <string name="lbl_eletiva">ELETIVA</string>
     <string name="title_activity_fmatriz_interativa">FMatrizInterativa</string>
-    <string name="lbl_profdestaque">Professores\nem Destaque</string>
+    <string name="lbl_profdestaque"><b>Professores\nem Destaque</b></string>
 </resources>
