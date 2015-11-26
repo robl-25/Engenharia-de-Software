@@ -10,8 +10,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
@@ -25,6 +28,13 @@ public class ArquivosTeste {
     @Rule public final ActivityTestRule<Arquivos> testArquivos = new ActivityTestRule<>(Arquivos.class);
     @Test
     public void deveAbrirActivity(){
-        onView(withText("Upload")).check(matches(isDisplayed()));
+        onView(withText("Arquivos mais procurados")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void enviarClicavel(){
+        onView(withId(R.id.btUpload)).perform(click());
+        onView(withText("Selecione o arquivo a ser enviado")).check(matches(isDisplayed()));
+
     }
 }

@@ -11,9 +11,53 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/lbl_Upload"
-        android:id="@+id/textView6"
+        android:text="@string/lbl_topFiles"
+        android:id="@+id/tvTopFiles"
+        android:textIsSelectable="false"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="61dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="118dp" />
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchFiles"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/svFiles" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar Arquivos"
+        android:id="@+id/btUpload"
+        android:layout_alignBottom="@+id/tvTopFiles"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvTopFiles"
+        android:layout_toRightOf="@+id/searchFiles"
+        android:layout_toEndOf="@+id/searchFiles"
+        android:layout_marginTop="70dp"
+        android:id="@+id/glFiles">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:id="@+id/rlFiles"></RelativeLayout>
+    </GridLayout>
 </RelativeLayout>
