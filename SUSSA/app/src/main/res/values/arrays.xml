@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <array name="SpinnerCursos">
+        <item name="EscolherCurso">"Escolha o seu curso"</item>
+        <item name="BCT">"BCT"</item>
+        <item name="BMC">"BMC</item>
+        <item name="BCC">"BCC"</item>
+        <item name="EC">"EC"</item>
+        <item name="EM">"EM"</item>
+        <item name="BM">"BM"</item>
+    </array>
+
     <array name="SpinnerProfessores">
         <item name="Destaques">"Destaques"</item>
         <item name="Alfabetica">"Ordem Alfabetica"</item>

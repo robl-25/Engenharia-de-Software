@@ -3,6 +3,7 @@ package com.example.jimy.sussa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,14 +12,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cadastro extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     
     //// TODO: 10/11/15 Criar Spinner(bottom_menu lateral) com titulo fixo
 
     private Spinner spCursos;
     private Button bCadastrar;
+    public TextView tvTitulo;
 
-    private ArrayAdapter<String> adCursos;
+    private ArrayAdapter adCursos;
 
 
     @Override
@@ -31,20 +36,18 @@ public class Cadastro extends AppCompatActivity implements View.OnClickListener,
 
         bCadastrar.setOnClickListener(this);
 
+        tvTitulo = (TextView)findViewById(R.id.tvTitulo);
+
+        tvTitulo.setGravity(Gravity.CENTER);
+
         //adCursos = new ArrayAdapter(this,R.layout.my_spinner);
-        adCursos = new ArrayAdapter(this,android.R.layout.simple_spinner_item);
-        //adCursos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adCursos = ArrayAdapter.createFromResource(this, R.array.SpinnerCursos,R.layout.my_spinner);
+        adCursos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //spCursos.setPrompt("Escolha o seu Curso");
         spCursos.setAdapter(adCursos);
 
 
-        adCursos.add("Escolha o seu Curso");
-        adCursos.add("BCT");
-        adCursos.add("BCC");
-        adCursos.add("BMC");
-        adCursos.add("EComp");
-        adCursos.add("EMat");
-        adCursos.add("EBM");
+
 
         //spCursos.setOnItemClickListener(this);
     }

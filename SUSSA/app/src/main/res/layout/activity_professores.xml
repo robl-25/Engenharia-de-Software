@@ -29,7 +29,7 @@
 
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:minWidth="5000dp"
             android:minHeight="0dp">
 
@@ -83,7 +83,7 @@
                 <Spinner
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner"
+                    android:id="@+id/spProfessores"
                     android:layout_row="1"
                     android:layout_column="1"
                     android:entries="@array/SpinnerProfessores"
