@@ -2,13 +2,8 @@ package com.example.jimy.sussa;
 
 import android.content.Intent;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-
-
 
 
 /**
@@ -31,14 +26,18 @@ public class ToolbarCreator {
         v.getSupportActionBar().setTitle(Titulo);
         tbBottom.inflateMenu(R.menu.bottom_menu);
 
+        //margens
+        tbBottom.setContentInsetsAbsolute(10,10);
+
 
         tbBottom.setOnMenuItemClickListener(new android.support.v7.widget.Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.itProfile:
-                        //TODO verificar se esta na propria activity Profile
+                        //TODO verificar se Cesta na propria activity Profile
                         Toast.makeText(v.getApplicationContext(), "Carregando tela de perfil", Toast.LENGTH_SHORT).show();
+                        v.startActivity(new Intent(v.getApplicationContext(), Profile.class));
                         break;
                     case R.id.itMatriz:
                         //// TODO: 23/11/15 Bug: icone prevalece na proxima activity..
@@ -59,4 +58,5 @@ public class ToolbarCreator {
 
 
     }
+
 }

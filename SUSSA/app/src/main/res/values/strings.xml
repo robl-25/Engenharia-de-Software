@@ -33,4 +33,5 @@
     <string name="lbl_Cerebro">Prof.Dr.Cerebro</string>
     <string name="lbl_Upload">Upload</string>
     <string name="lbl_topFiles">Arquivos mais procurados</string>
+    <string name="lbl_profalf">Professores\nem Ordem Alfabetica</string>
 </resources>

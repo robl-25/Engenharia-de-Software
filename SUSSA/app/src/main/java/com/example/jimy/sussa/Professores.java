@@ -1,6 +1,9 @@
 package com.example.jimy.sussa;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,16 +11,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ScrollView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Professores extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
+    SearchView schvBuscarProfessores;
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-public class Professores extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener {
+    ProfDestaque_fragment profDestaque_fragment = new ProfDestaque_fragment();
+    ProfAlfabetica_fragment profAlfabetica_fragment = new ProfAlfabetica_fragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,23 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
         ToolbarCreator tc = new ToolbarCreator();
         tc.initToolbars(this, "SUSSA_PROFESSORES");
 
+        spinnerCreator();
+
+        schvBuscarProfessores = (SearchView)findViewById(R.id.schvBuscarProfessores);
+        schvBuscarProfessores.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Toast.makeText(getApplicationContext(), "Saiu do foco", Toast.LENGTH_SHORT).show();
+                schvBuscarProfessores.setQuery("", false);
+            }
+        });
+
+        fragmentTransaction.add(R.id.profFragmentContainer, profDestaque_fragment);
+        fragmentTransaction.commit();
+
+    }
+
+    private void spinnerCreator() {
         Spinner spProfessores = (Spinner)findViewById(R.id.spProfessores);
         spProfessores.setOnItemSelectedListener(this);
 
@@ -44,8 +65,13 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        //startActivity(new Intent(this,Welcome.class));
+        if (!schvBuscarProfessores.isIconified()) {
+            Toast.makeText(getApplicationContext(),"A busca NAO esta expandida",Toast.LENGTH_SHORT).show();
+            schvBuscarProfessores.setIconified(true);
+        } else {
+            Toast.makeText(getApplicationContext(),"A busca esta expandida",Toast.LENGTH_SHORT).show();
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -86,9 +112,11 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
         switch (parent.getSelectedItemPosition()){
             case 0:
                 Toast.makeText(this, "Selecionado Destaques",Toast.LENGTH_SHORT).show();
+                openFragment(profDestaque_fragment);
                 break;
             case 1:
                 Toast.makeText(this, "Selecionado Ordem Alfabetica",Toast.LENGTH_SHORT).show();
+                openFragment(profAlfabetica_fragment);
                 break;
             case 2:
                 Toast.makeText(this, "Selecionado Disciplinas",Toast.LENGTH_SHORT).show();
@@ -102,5 +130,14 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    //esse metodo eh necessario para toda vez instanciar um novo fragmentManager
+    public void openFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.profFragmentContainer, fragment);
+        fragmentTransaction.addToBackStack(null);   //serve para lembrar que o fragment atual sera a tela que aparecera ao apertar 'voltar'
+        fragmentTransaction.commit();
     }
 }
