@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +23,9 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
 
         //Iniciando toolbars
-        initToolbars();
+        ToolbarCreator tc = new ToolbarCreator();
+        tc.initToolbars(this,"SUSSA_PERFIL");
+
 
         TextView saudacoes = (TextView)findViewById(R.id.tvSaudacoes);
 
@@ -44,8 +48,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         fillEmail.setTypeface(Typeface.DEFAULT_BOLD);
         fillCurso.setText(Usuario.curso);
         fillCurso.setTypeface(Typeface.DEFAULT_BOLD);
-
-
+        
 
     }
 
@@ -59,47 +62,47 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     }
 
 
-    //// TODO: 14/11/15 Pensar em uma maneira de refatorar para evitar a duplicacao do trecho de codigo a seguir em todas as activities
-    //Custom Toolbar events handler
-    public void initToolbars(){
-        //// TODO: 16/11/15 pesquisar forma de incluir biblioteca android support 
-        //Recebendo toolbar criadas
-        android.support.v7.widget.Toolbar tbTop = (android.support.v7.widget.Toolbar)findViewById(R.id.tbTop);
-        android.support.v7.widget.Toolbar tbBottom = (android.support.v7.widget.Toolbar)findViewById(R.id.tbBottom);
-
-        //Tratando o tbtop como se fosse o AcionBar padrao, portanto precisa implementar metodo onCreateOptionsMenu
-        setSupportActionBar(tbTop);
-
-        //// TODO: 14/11/15 gambirra para editar o titulo...
-        getSupportActionBar().setTitle("SUSSA_PERFIL");
-        tbBottom.inflateMenu(R.menu.bottom_menu);
-
-
-        tbBottom.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.itProfile:
-                        //TODO verificar se esta na propria activity Profile
-                        Toast.makeText(getApplicationContext(),"Carregando tela de perfil",Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.itMatriz:
-                        //// TODO: 23/11/15 Bug: icone prevalece na proxima activity..
-                        Toast.makeText(getApplicationContext(),"Carregando tela de gerencia de matrizes",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), Matriz.class));
-                        break;
-                    case R.id.itProfessores:
-                        Toast.makeText(getApplicationContext(),"Carregando tela de Professores",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), Professores.class));
-                        break;
-                    case R.id.itArquivos:
-                        Toast.makeText(getApplicationContext(),"Carregando tela de Arquivos",Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return false;
-            }
-        });
-    }
+//    //// TODO: 14/11/15 Pensar em uma maneira de refatorar para evitar a duplicacao do trecho de codigo a seguir em todas as activities
+//    //Custom Toolbar events handler
+//    public void initToolbars(){
+//        //// TODO: 16/11/15 pesquisar forma de incluir biblioteca android support
+//        //Recebendo toolbar criadas
+//        android.support.v7.widget.Toolbar tbTop = (android.support.v7.widget.Toolbar)findViewById(R.id.tbTop);
+//        android.support.v7.widget.Toolbar tbBottom = (android.support.v7.widget.Toolbar)findViewById(R.id.tbBottom);
+//
+//        //Tratando o tbtop como se fosse o AcionBar padrao, portanto precisa implementar metodo onCreateOptionsMenu
+//        setSupportActionBar(tbTop);
+//
+//        //// TODO: 14/11/15 gambirra para editar o titulo...
+//        getSupportActionBar().setTitle("SUSSA_PERFIL");
+//        tbBottom.inflateMenu(R.menu.bottom_menu);
+//
+//
+//        tbBottom.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                switch (item.getItemId()){
+//                    case R.id.itProfile:
+//                        //TODO verificar se esta na propria activity Profile
+//                        Toast.makeText(getApplicationContext(),"Carregando tela de perfil",Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case R.id.itMatriz:
+//                        //// TODO: 23/11/15 Bug: icone prevalece na proxima activity..
+//                        Toast.makeText(getApplicationContext(),"Carregando tela de gerencia de matrizes",Toast.LENGTH_SHORT).show();
+//                        startActivity(new Intent(getApplicationContext(), Matriz.class));
+//                        break;
+//                    case R.id.itProfessores:
+//                        Toast.makeText(getApplicationContext(),"Carregando tela de Professores",Toast.LENGTH_SHORT).show();
+//                        startActivity(new Intent(getApplicationContext(), Professores.class));
+//                        break;
+//                    case R.id.itArquivos:
+//                        Toast.makeText(getApplicationContext(),"Carregando tela de Arquivos",Toast.LENGTH_SHORT).show();
+//                        break;
+//                }
+//                return false;
+//            }
+//        });
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

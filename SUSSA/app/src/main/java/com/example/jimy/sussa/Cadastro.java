@@ -17,7 +17,6 @@ import java.util.List;
 
 public class Cadastro extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     
-    //// TODO: 10/11/15 Criar Spinner(bottom_menu lateral) com titulo fixo
 
     private Spinner spCursos;
     private Button bCadastrar;

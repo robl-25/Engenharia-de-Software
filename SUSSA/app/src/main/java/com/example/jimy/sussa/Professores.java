@@ -15,13 +15,15 @@ import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
 public class Professores extends AppCompatActivity implements View.OnClickListener,AdapterView.OnItemSelectedListener{
     SearchView schvBuscarProfessores;
     FragmentManager fragmentManager = getSupportFragmentManager();
     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-    ProfDestaque_fragment profDestaque_fragment = new ProfDestaque_fragment();
-    ProfAlfabetica_fragment profAlfabetica_fragment = new ProfAlfabetica_fragment();
+    ProfDestaque_fragment profDestaque_fragment;
+    ProfAlfabetica_fragment profAlfabetica_fragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +44,14 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
             }
         });
 
-        fragmentTransaction.add(R.id.profFragmentContainer, profDestaque_fragment);
-        fragmentTransaction.commit();
+        profDestaque_fragment = new ProfDestaque_fragment();
+        profAlfabetica_fragment = new ProfAlfabetica_fragment();
 
+        //necessita verificar se eh nulo para tratar mudanca de orientacao
+        if(profDestaque_fragment == null) {
+            fragmentTransaction.add(R.id.profFragmentContainer, profDestaque_fragment);
+            fragmentTransaction.commit();
+        }
     }
 
     private void spinnerCreator() {
@@ -107,6 +114,7 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
 
     }
 
+    //// TODO: 30/11/15 Alterar para listagem por: Alfabetica, Top 5, Aleatorio
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (parent.getSelectedItemPosition()){

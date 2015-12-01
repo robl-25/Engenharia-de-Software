@@ -34,4 +34,6 @@
     <string name="lbl_Upload">Upload</string>
     <string name="lbl_topFiles">Arquivos mais procurados</string>
     <string name="lbl_profalf">Professores\nem Ordem Alfabetica</string>
+    <string name="lbl_sobre">Sobre</string>
+    <string name="lbl_ajuda">Ajuda</string>
 </resources>
