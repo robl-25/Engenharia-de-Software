@@ -48,7 +48,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         fillEmail.setTypeface(Typeface.DEFAULT_BOLD);
         fillCurso.setText(Usuario.curso);
         fillCurso.setTypeface(Typeface.DEFAULT_BOLD);
-        
+
 
     }
 

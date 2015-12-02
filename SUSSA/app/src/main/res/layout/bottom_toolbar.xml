@@ -27,8 +27,7 @@
                 android:layout_width="50dp"
                 android:layout_height="fill_parent"
                 android:src="@drawable/sussaicon"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:background="@color/colorPrimary"
                 android:id="@+id/itProfile"
                 />
@@ -38,8 +37,7 @@
                 android:layout_width="50dp"
                 android:layout_height="fill_parent"
                 android:src="@drawable/gdisciplinas"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:background="@color/colorPrimary"
                 android:id="@+id/itMatriz"
                 />
@@ -48,9 +46,8 @@
                 android:scaleType="centerInside"
                 android:layout_width="50dp"
                 android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:src="@drawable/professor"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:background="@color/colorPrimary"
                 android:id="@+id/itProfessores"
                 />
@@ -59,9 +56,8 @@
                 android:scaleType="centerInside"
                 android:layout_width="50dp"
                 android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:src="@drawable/arquivos"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:background="@color/colorPrimary"
                 android:id="@+id/itArquivos"
                 />
