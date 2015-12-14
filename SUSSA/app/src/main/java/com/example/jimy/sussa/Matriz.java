@@ -3,7 +3,7 @@ package com.example.jimy.sussa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +25,9 @@ public class Matriz extends AppCompatActivity implements View.OnClickListener{
         TextView planejador = (TextView)findViewById(R.id.tvPlanejador);
         TextView progressoCursos = (TextView)findViewById(R.id.tvProgressoCursos);
 
+        matrizesInterativas.setGravity(Gravity.CENTER);
+        planejador.setGravity(Gravity.CENTER);
+        progressoCursos.setGravity(Gravity.CENTER);
 
         matrizesInterativas.setOnClickListener(this);
         planejador.setOnClickListener(this);
@@ -42,7 +45,7 @@ public class Matriz extends AppCompatActivity implements View.OnClickListener{
             case R.id.tvPlanejador:
                 break;
             case R.id.tvProgressoCursos:
-                setContentView(R.layout.fragment_progress);
+                setContentView(R.layout.activity_progress);
                 break;
         }
     }

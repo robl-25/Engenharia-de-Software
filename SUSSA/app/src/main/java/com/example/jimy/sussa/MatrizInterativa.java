@@ -1,6 +1,7 @@
 package com.example.jimy.sussa;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 public class MatrizInterativa extends AppCompatActivity implements View.OnClickListener{
     LinearLayout llMatrizContainer;
     Button btEditarMatriz, btFullsize;
+    FloatingActionButton fbFullSize;
     BDDisciplinas bddisciplinas;
     TextView tvMatrizAtual;
 
@@ -52,7 +54,10 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
         tvMatrizAtual = (TextView) findViewById(R.id.tvMatrizAtual);
         btEditarMatriz = (Button) findViewById(R.id.btEditarMatriz);
         btFullsize = (Button) findViewById(R.id.btFullScreen);
+        //fbFullSize = new FloatingActionButton(this);
         llMatrizContainer = (LinearLayout)findViewById(R.id.llMatrizContainer);
+
+        //fbFullSize.show();
 
         //setando o local onde a matriz BCT vai ser posicionada
         fragmentTransaction.add(R.id.llMatrizContainer, mbct);
@@ -63,6 +68,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
         btEditarMatriz.setOnClickListener(this);
         btFullsize.setOnClickListener(this);
         tvMatrizAtual.setOnClickListener(this);
+        //fbFullSize.setOnClickListener(this);
 
         gestureDetector = new GestureDetector(this, new GestureListener());
         mSGD = new ScaleGestureDetector(this, new ScaleListener());

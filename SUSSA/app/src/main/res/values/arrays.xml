@@ -16,4 +16,9 @@
         <item name="Disciplinas">"Disciplinas</item>
         <item name="Votos">"Mais votados"</item>
     </array>
+
+    <array name="SpinnerExibicao">
+        <item name="Lista">Lista</item>
+        <item name="Lista">Icones</item>
+    </array>
 </resources>

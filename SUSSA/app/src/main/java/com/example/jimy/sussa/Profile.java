@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,12 +42,19 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         TextView tvEditFields = (TextView)findViewById(R.id.tvEditFields);
 
         tvEditFields.setOnClickListener(this);
+        tvEditFields.setGravity(Gravity.CENTER);
+
 
         fillNome.setText(Usuario.nome);
         fillNome.setTypeface(Typeface.DEFAULT_BOLD);
+        fillNome.setGravity(Gravity.CENTER);
+
         fillEmail.setText(Usuario.email);
         fillEmail.setTypeface(Typeface.DEFAULT_BOLD);
+        fillEmail.setGravity(Gravity.CENTER);
+
         fillCurso.setText(Usuario.curso);
+        fillCurso.setGravity(Gravity.CENTER);
         fillCurso.setTypeface(Typeface.DEFAULT_BOLD);
 
 

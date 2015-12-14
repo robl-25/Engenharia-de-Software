@@ -6,11 +6,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
     ProfDestaque_fragment profDestaque_fragment;
     ProfAlfabetica_fragment profAlfabetica_fragment;
 
+    LinearLayout llComentarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,11 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
         ToolbarCreator tc = new ToolbarCreator();
         tc.initToolbars(this, "SUSSA_PROFESSORES");
 
-        spinnerCreator();
+        spinnerCreator(R.id.spProfessores, R.array.SpinnerProfessores);
+        spinnerCreator(R.id.spExibirProfessores, R.array.SpinnerExibicao);
+
+        llComentarios = (LinearLayout)findViewById(R.id.llCmntProf);
+        llComentarios.setGravity(Gravity.CENTER);
 
         schvBuscarProfessores = (SearchView)findViewById(R.id.schvBuscarProfessores);
         schvBuscarProfessores.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
@@ -54,12 +61,12 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    private void spinnerCreator() {
-        Spinner spProfessores = (Spinner)findViewById(R.id.spProfessores);
+    private void spinnerCreator(int spinnerXML,int arrayDados) {
+        Spinner spProfessores = (Spinner)findViewById(spinnerXML);
         spProfessores.setOnItemSelectedListener(this);
 
         // Creating adapter for spinner
-        ArrayAdapter dataAdapter = ArrayAdapter.createFromResource(this, R.array.SpinnerProfessores,R.layout.my_spinner);
+        ArrayAdapter dataAdapter = ArrayAdapter.createFromResource(this, arrayDados, R.layout.my_spinner);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
