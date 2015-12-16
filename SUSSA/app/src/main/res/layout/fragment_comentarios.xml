@@ -1,0 +1,44 @@
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_marginTop="30dp"
+    android:gravity="center"
+    android:id="@+id/llCmntProf"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMENTARIOS"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_column="0"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="MAIS RECENTES"
+            android:layout_row="2"
+            android:layout_weight="1"
+            android:layout_column="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="MAIS VOTADOS"
+            android:layout_row="2"
+            android:layout_weight="1"
+            android:layout_column="2" />
+    </LinearLayout>
+
+</GridLayout>

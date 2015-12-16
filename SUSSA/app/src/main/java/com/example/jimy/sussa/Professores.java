@@ -25,8 +25,8 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
 
     ProfDestaque_fragment profDestaque_fragment;
     ProfAlfabetica_fragment profAlfabetica_fragment;
+    Comentarios_fragment profComent_fragment;
 
-    LinearLayout llComentarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,6 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
         spinnerCreator(R.id.spProfessores, R.array.SpinnerProfessores);
         spinnerCreator(R.id.spExibirProfessores, R.array.SpinnerExibicao);
 
-        llComentarios = (LinearLayout)findViewById(R.id.llCmntProf);
-        llComentarios.setGravity(Gravity.CENTER);
 
         schvBuscarProfessores = (SearchView)findViewById(R.id.schvBuscarProfessores);
         schvBuscarProfessores.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
@@ -53,12 +51,20 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
 
         profDestaque_fragment = new ProfDestaque_fragment();
         profAlfabetica_fragment = new ProfAlfabetica_fragment();
+        profComent_fragment = new Comentarios_fragment();
 
-        //necessita verificar se eh nulo para tratar mudanca de orientacao
-        if(profDestaque_fragment == null) {
-            fragmentTransaction.add(R.id.profFragmentContainer, profDestaque_fragment);
-            fragmentTransaction.commit();
-        }
+//        //necessita verificar se eh nulo para tratar mudanca de orientacao
+//        if(profDestaque_fragment == null) {
+//            fragmentTransaction.add(R.id.profFragmentContainer, profAlfabetica_fragment);
+//            fragmentTransaction.commit();
+//        }
+//
+//        if(profComent_fragment == null){
+//            fragmentTransaction.add(R.id.llCmntProfContainer, profComent_fragment);
+//            fragmentTransaction.commit();
+//        }
+
+        openFragment(profComent_fragment,R.id.llCmntProfContainer);
     }
 
     private void spinnerCreator(int spinnerXML,int arrayDados) {
@@ -127,11 +133,11 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
         switch (parent.getSelectedItemPosition()){
             case 0:
                 Toast.makeText(this, "Selecionado Destaques",Toast.LENGTH_SHORT).show();
-                openFragment(profDestaque_fragment);
+                openFragment(profDestaque_fragment, R.id.profFragmentContainer);
                 break;
             case 1:
                 Toast.makeText(this, "Selecionado Ordem Alfabetica",Toast.LENGTH_SHORT).show();
-                openFragment(profAlfabetica_fragment);
+                openFragment(profAlfabetica_fragment, R.id.profFragmentContainer);
                 break;
             case 2:
                 Toast.makeText(this, "Selecionado Disciplinas",Toast.LENGTH_SHORT).show();
@@ -148,10 +154,10 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
     }
 
     //esse metodo eh necessario para toda vez instanciar um novo fragmentManager
-    public void openFragment(Fragment fragment){
+    public void openFragment(Fragment fragment, int container){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.profFragmentContainer, fragment);
+        fragmentTransaction.replace(container, fragment);
         fragmentTransaction.addToBackStack(null);   //serve para lembrar que o fragment atual sera a tela que aparecera ao apertar 'voltar'
         fragmentTransaction.commit();
     }
