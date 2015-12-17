@@ -29,8 +29,8 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
     
     //// TODO: 22/11/15 Criar matriz dinamica 
     //// TODO: 22/11/15 Falta criar uma fragment para legendas
-    MatrizBCT_fragment mbct = new MatrizBCT_fragment();
-    MatrizBCC_fragment mbcc = new MatrizBCC_fragment();
+    MatrizBCT_fragment mbct = CurrentUser.matrizBCT_fragment;
+    MatrizBCC_fragment mbcc = CurrentUser.matrizBCC_fragment;
 
 
     int count = 0;      //indice de referencia ao fragment atual

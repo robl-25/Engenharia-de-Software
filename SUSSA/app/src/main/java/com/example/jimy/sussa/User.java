@@ -73,4 +73,12 @@ public class User {
     public MatrizBCC_fragment getMatrizBCC_fragment() {
         return matrizBCC_fragment;
     }
+
+    public void setMatrizBCT_fragment(MatrizBCT_fragment matrizBCT_fragment) {
+        this.matrizBCT_fragment = matrizBCT_fragment;
+    }
+
+    public void setMatrizBCC_fragment(MatrizBCC_fragment matrizBCC_fragment) {
+        this.matrizBCC_fragment = matrizBCC_fragment;
+    }
 }

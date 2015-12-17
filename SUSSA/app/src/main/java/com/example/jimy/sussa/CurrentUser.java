@@ -11,5 +11,6 @@ public  class CurrentUser {
         senha = "testeteste",
         curso = "BCTeste";
 
-
+    public static MatrizBCT_fragment matrizBCT_fragment;
+    public static MatrizBCC_fragment matrizBCC_fragment;
 }

@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         switch (v.getId()) {
             case R.id.bEntrar:
-                userBuilder.setCurrentUser(login,"","", senha, ""); //limpeza ao retornar a activity
+                userBuilder.setCurrentUser(login,"","", senha, "",null,null); //limpeza ao retornar a activity
                 authentication(login,senha);
                 //authentication2(login,senha);  //autenticacao hardcoded (sem bd)
                 break;
@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         else {
             User u = BDUsers.hashUsers.get(login);
             if(u.getSenha().equals(senha)){
-                userBuilder.setCurrentUser(u.getNome(),u.getUsuario(),u.getEmail(),u.getSenha(),u.getCurso());
+                userBuilder.setCurrentUser(u.getNome(),u.getUsuario(),u.getEmail(),u.getSenha(),u.getCurso(),u.getMatrizBCT_fragment(),u.getMatrizBCC_fragment());
                 startActivity(new Intent(getApplicationContext(), Profile.class));
             }
             else    Toast.makeText(this,"Senha incorreta",Toast.LENGTH_SHORT).show();

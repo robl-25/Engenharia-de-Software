@@ -33,14 +33,19 @@ public class MatrizBCT_fragment extends Fragment implements View.OnClickListener
     //Gera matriz BCT Default
     public void setDefaultMatrizBCT(){
         btC1 = (Button)view.findViewById(R.id.btC1);
-        btC1.setEnabled(false); //inicia tabela como nao editavel
-        btC1.setTextColor(Color.BLACK);
 
         arrayMateriasBCT.add(btC1);
 
         for(Button b: arrayMateriasBCT){
+            b.setEnabled(false); //inicia tabela como nao editavel
+            b.setTextColor(Color.BLACK);
             b.setOnClickListener(this);
             b.setOnLongClickListener(this);
+
+            //inicia a matriz com materias feitas coloridas
+            if(bddisciplinas.isCursado(b.getId())){
+                b.setBackgroundColor(Color.rgb(204, 255, 255));
+            }
         }
     }
 

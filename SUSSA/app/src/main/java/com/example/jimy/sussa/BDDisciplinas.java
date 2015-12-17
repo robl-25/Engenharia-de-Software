@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class BDDisciplinas {
     HashMap<Integer,Disciplina> hashMatrizAbsoluta;
-    Disciplina C1 = new Disciplina(R.id.btC1,"Calculo 1",false);
+    Disciplina C1 = new Disciplina(R.id.btC1,"Obrigatoria","Calculo 1",false);
 
     public BDDisciplinas(){
         hashMatrizAbsoluta = new HashMap<>();
