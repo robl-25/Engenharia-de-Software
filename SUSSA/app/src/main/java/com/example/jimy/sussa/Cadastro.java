@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ public class Cadastro extends AppCompatActivity implements View.OnClickListener,
     private Spinner spCursos;
     private Button bCadastrar;
     public TextView tvTitulo;
+    public EditText etNome, etUsuario, etEmail, etSenha, etConfirmacao;
+    public String nome,usuario,email,senha,confirmacao,curso;
 
     private ArrayAdapter adCursos;
 
@@ -32,6 +35,12 @@ public class Cadastro extends AppCompatActivity implements View.OnClickListener,
 
         spCursos = (Spinner)findViewById(R.id.spCurso);
         bCadastrar = (Button)findViewById(R.id.bCadastrar);
+        etNome = (EditText)findViewById(R.id.etNome);
+        etUsuario = (EditText)findViewById(R.id.etUsuario);
+        etEmail = (EditText)findViewById(R.id.etEmail);
+        etSenha = (EditText)findViewById(R.id.etSenha);
+        etConfirmacao = (EditText)findViewById(R.id.etConfirmacao);
+
 
         bCadastrar.setOnClickListener(this);
 
@@ -64,10 +73,22 @@ public class Cadastro extends AppCompatActivity implements View.OnClickListener,
 
     @Override
     public void onClick(View v) {
+
+        nome = etNome.getText().toString();
+        usuario = etUsuario.getText().toString();
+        email = etEmail.getText().toString();
+        senha = etSenha.getText().toString();
+        confirmacao = etConfirmacao.getText().toString();
+        curso = spCursos.getSelectedItem().toString();
+
         switch (v.getId()){
-           case R.id.bCadastrar:
-               //todo fazer confirmacao de senhas
-                startActivity(new Intent(this,Login.class));
+            case R.id.bCadastrar:
+                if(!senha.equals(confirmacao))  Toast.makeText(this,"senhas nao conferem",Toast.LENGTH_SHORT).show();
+                else {
+                    BDUsers.hashUsers.put(usuario, new User(nome, usuario, email, senha, curso));
+                    BDUsers.hashUsers.put(email, new User(nome, usuario, email, senha, curso));
+                    startActivity(new Intent(this, Login.class));
+                }
                 break;
         }
 

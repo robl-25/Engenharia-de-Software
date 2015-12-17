@@ -36,4 +36,5 @@
     <string name="lbl_profalf">Professores\nem Ordem Alfabetica</string>
     <string name="lbl_sobre">Sobre</string>
     <string name="lbl_ajuda">Ajuda</string>
+    <string name="lbl_cmntExample"><b>Jimy</b>\n\nEsse eh um comentario exemplo</string>
 </resources>

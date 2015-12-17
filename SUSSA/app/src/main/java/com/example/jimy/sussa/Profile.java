@@ -4,13 +4,10 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +29,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
         //// TODO: 11/11/15 Receber atributos preenchidos na tela de login
 
-        saudacoes.setText("OLA, " + Usuario.nome + "!");
+        saudacoes.setText("OLA, " + CurrentUser.nome + "!");
         saudacoes.setTypeface(Typeface.DEFAULT_BOLD);
 
 
@@ -45,15 +42,15 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         tvEditFields.setGravity(Gravity.CENTER);
 
 
-        fillNome.setText(Usuario.nome);
+        fillNome.setText(CurrentUser.nome);
         fillNome.setTypeface(Typeface.DEFAULT_BOLD);
         fillNome.setGravity(Gravity.CENTER);
 
-        fillEmail.setText(Usuario.email);
+        fillEmail.setText(CurrentUser.email);
         fillEmail.setTypeface(Typeface.DEFAULT_BOLD);
         fillEmail.setGravity(Gravity.CENTER);
 
-        fillCurso.setText(Usuario.curso);
+        fillCurso.setText(CurrentUser.curso);
         fillCurso.setGravity(Gravity.CENTER);
         fillCurso.setTypeface(Typeface.DEFAULT_BOLD);
 

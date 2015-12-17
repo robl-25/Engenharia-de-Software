@@ -41,18 +41,20 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
 
 
         schvBuscarProfessores = (SearchView)findViewById(R.id.schvBuscarProfessores);
-        schvBuscarProfessores.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                Toast.makeText(getApplicationContext(), "Saiu do foco", Toast.LENGTH_SHORT).show();
-                schvBuscarProfessores.setQuery("", false);
-            }
-        });
+
+        //Verifica o foco do search
+//        schvBuscarProfessores.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                Toast.makeText(getApplicationContext(), "Saiu do foco", Toast.LENGTH_SHORT).show();
+//                schvBuscarProfessores.setQuery("", false);
+//            }
+//        });
 
         profDestaque_fragment = new ProfDestaque_fragment();
         profAlfabetica_fragment = new ProfAlfabetica_fragment();
         profComent_fragment = new Comentarios_fragment();
-
+//
 //        //necessita verificar se eh nulo para tratar mudanca de orientacao
 //        if(profDestaque_fragment == null) {
 //            fragmentTransaction.add(R.id.profFragmentContainer, profAlfabetica_fragment);
@@ -68,8 +70,8 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
     }
 
     private void spinnerCreator(int spinnerXML,int arrayDados) {
-        Spinner spProfessores = (Spinner)findViewById(spinnerXML);
-        spProfessores.setOnItemSelectedListener(this);
+        Spinner spinner = (Spinner)findViewById(spinnerXML);
+        spinner.setOnItemSelectedListener(this);
 
         // Creating adapter for spinner
         ArrayAdapter dataAdapter = ArrayAdapter.createFromResource(this, arrayDados, R.layout.my_spinner);
@@ -79,7 +81,7 @@ public class Professores extends AppCompatActivity implements View.OnClickListen
 
 
         // attaching data adapter to spinner
-        spProfessores.setAdapter(dataAdapter);
+        spinner.setAdapter(dataAdapter);
 
     }
 

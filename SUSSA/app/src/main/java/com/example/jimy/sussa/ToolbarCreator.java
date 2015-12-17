@@ -92,6 +92,7 @@ public class ToolbarCreator implements View.OnClickListener{
                 break;
             case R.id.itArquivos:
                 Toast.makeText(activity.getApplicationContext(),"Carregando tela de Arquivos",Toast.LENGTH_SHORT).show();
+                activity.startActivity(new Intent(activity.getApplicationContext(),Arquivos.class));
                 break;
         }
     }

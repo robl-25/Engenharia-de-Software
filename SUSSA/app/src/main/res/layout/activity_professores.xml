@@ -27,19 +27,15 @@
         android:layout_above="@id/bottomToolbar"
         android:layout_below="@id/topToolbar">
 
-        <GridLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minWidth="5000dp"
-            android:minHeight="0dp">
+            android:layout_height="wrap_content">
 
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/glListaProfessores"
-                android:layout_marginTop="30dp"
-                android:layout_row="0"
-                android:layout_column="0">
+                android:layout_marginTop="30dp">
 
                 <SearchView
                     android:layout_width="fill_parent"
@@ -100,6 +96,8 @@
 
 
             </GridLayout>
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,219 +106,20 @@
                 tools:layout="@layout/fragment_profdestq"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                android:layout_row="1"
-                android:layout_column="0"/>
-
+                android:layout_below="@id/glListaProfessores"/>
 
             <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:layout_marginTop="30dp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_below="@id/profFragmentContainer"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:id="@+id/llCmntProfContainer"
                 android:orientation="horizontal">
             </LinearLayout>
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-                <!--android:text="@string/lbl_profdestaque"-->
-                <!--android:id="@+id/textView5"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_centerHorizontal="true"-->
-                <!--android:layout_row="1"-->
-                <!--android:layout_column="0"-->
-                <!--android:layout_marginTop="20dp"-->
-                <!--android:layout_columnSpan="2"-->
-                <!--android:gravity="center_horizontal" />-->
-            <!-- -->
-            <!--<HorizontalScrollView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:id="@+id/horizontalScrollView"-->
-                <!--android:layout_below="@+id/glListaProfessores"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:layout_row="2"-->
-                <!--android:layout_column="0"-->
-                <!--android:layout_columnSpan="2"-->
-                <!--android:layout_gravity="center_horizontal">-->
 
-                <!--<LinearLayout-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!-->-->
+        </RelativeLayout>
 
-                    <!--<RelativeLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginLeft="10dp"-->
-                        <!--android:layout_marginRight="20dp">-->
-
-                        <!--<ImageView-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="180dp"-->
-                            <!--android:id="@+id/ivBeakman"-->
-                            <!--android:src="@drawable/beakman"-->
-                            <!--android:layout_alignParentLeft="false"-->
-                            <!--android:layout_alignParentRight="false"-->
-                            <!--android:layout_alignWithParentIfMissing="false"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:layout_alignParentTop="true"-->
-                            <!--android:scaleType="fitXY"-->
-                            <!--android:adjustViewBounds="true"-->
-                            <!--/>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@+id/ivBeakman"-->
-                            <!--android:id="@+id/tvBeakman"-->
-                            <!--android:text="@string/lbl_Beakman"-->
-                            <!--android:layout_centerHorizontal="true"-->
-                            <!--android:textSize="20dp"-->
-                            <!--android:layout_marginTop="5dp" />-->
-                        <!--<RatingBar-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:id="@+id/ratingBar"-->
-                            <!--android:layout_below="@+id/tvBeakman"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:rating="4"-->
-                            <!--android:progressTint="#b1fdf22c"-->
-                            <!--android:layout_marginTop="5dp" /> "-->
-
-                    <!--</RelativeLayout>-->
-                    <!--<RelativeLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginLeft="10dp"-->
-                        <!--android:layout_marginRight="20dp">-->
-
-                        <!--<ImageView-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="180dp"-->
-                            <!--android:id="@+id/ivBrown"-->
-                            <!--android:src="@drawable/brown"-->
-                            <!--android:layout_alignParentLeft="false"-->
-                            <!--android:layout_alignParentRight="false"-->
-                            <!--android:layout_alignWithParentIfMissing="false"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:layout_alignParentTop="true"-->
-                            <!--android:scaleType="fitXY"-->
-                            <!--android:adjustViewBounds="true"-->
-                            <!--/>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@+id/ivBrown"-->
-                            <!--android:id="@+id/tvBrown"-->
-                            <!--android:text="@string/lbl_Brown"-->
-                            <!--android:layout_centerHorizontal="true"-->
-                            <!--android:textSize="20dp"-->
-                            <!--android:layout_marginTop="5dp" />-->
-                        <!--<RatingBar-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:id="@+id/ratingBar"-->
-                            <!--android:layout_below="@+id/tvBrown"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:rating="4"-->
-                            <!--android:progressTint="#b1fdf22c"-->
-                            <!--android:layout_marginTop="5dp" /> "-->
-
-                    <!--</RelativeLayout>-->
-                    <!--<RelativeLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginLeft="10dp"-->
-                        <!--android:layout_marginRight="20dp">-->
-
-                        <!--<ImageView-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="180dp"-->
-                            <!--android:id="@+id/ivCerebro"-->
-                            <!--android:src="@drawable/cerebro"-->
-                            <!--android:layout_alignParentLeft="false"-->
-                            <!--android:layout_alignParentRight="false"-->
-                            <!--android:layout_alignWithParentIfMissing="false"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:layout_alignParentTop="true"-->
-                            <!--android:scaleType="fitXY"-->
-                            <!--android:adjustViewBounds="true"-->
-                            <!--/>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@+id/ivCerebro"-->
-                            <!--android:id="@+id/tvCerebro"-->
-                            <!--android:text="@string/lbl_Cerebro"-->
-                            <!--android:layout_centerHorizontal="true"-->
-                            <!--android:textSize="20dp"-->
-                            <!--android:layout_marginTop="5dp" />-->
-                        <!--<RatingBar-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:id="@+id/ratingBar"-->
-                            <!--android:layout_below="@+id/tvCerebro"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:rating="4"-->
-                            <!--android:progressTint="#b1fdf22c"-->
-                            <!--android:layout_marginTop="5dp" /> "-->
-
-                    <!--</RelativeLayout>-->
-                    <!--<RelativeLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginLeft="10dp"-->
-                        <!--android:layout_marginRight="20dp">-->
-
-                        <!--<ImageView-->
-                            <!--android:layout_width="150dp"-->
-                            <!--android:layout_height="180dp"-->
-                            <!--android:id="@+id/ivFrink"-->
-                            <!--android:src="@drawable/frink"-->
-                            <!--android:layout_alignParentLeft="false"-->
-                            <!--android:layout_alignParentRight="false"-->
-                            <!--android:layout_alignWithParentIfMissing="false"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:layout_alignParentTop="true"-->
-                            <!--android:scaleType="fitXY"-->
-                            <!--android:adjustViewBounds="true"-->
-                            <!--/>-->
-
-                        <!--<TextView-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_below="@+id/ivFrink"-->
-                            <!--android:id="@+id/tvFrink"-->
-                            <!--android:text="Prof.Dr.John Frink"-->
-                            <!--android:layout_centerHorizontal="true"-->
-                            <!--android:textSize="20dp"-->
-                            <!--android:layout_marginTop="5dp" />-->
-                        <!--<RatingBar-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:id="@+id/ratingBar"-->
-                            <!--android:layout_below="@+id/tvFrink"-->
-                            <!--android:layout_centerInParent="true"-->
-                            <!--android:rating="4"-->
-                            <!--android:progressTint="#b1fdf22c"-->
-                            <!--android:layout_marginTop="5dp" /> "-->
-
-                    <!--</RelativeLayout>-->
-
-
-
-
-                <!--</LinearLayout>-->
-            <!--</HorizontalScrollView>-->
-
-        </GridLayout>
     </ScrollView>
 
 </RelativeLayout>
