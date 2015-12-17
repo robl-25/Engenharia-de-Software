@@ -190,7 +190,7 @@ public class MatrizInterativa extends AppCompatActivity implements View.OnClickL
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.llMatrizContainer, fragment);
-        fragmentTransaction.addToBackStack(null);   //serve para lembrar que o fragment atual sera a tela que aparecera ao apertar 'voltar'
+        //fragmentTransaction.addToBackStack(null);   //serve para lembrar que o fragment atual sera a tela que aparecera ao apertar 'voltar'
         fragmentTransaction.commit();
     }
 

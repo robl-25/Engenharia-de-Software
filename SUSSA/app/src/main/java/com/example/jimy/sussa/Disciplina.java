@@ -46,5 +46,11 @@ public class Disciplina{
         this.nome = nome;
     }
 
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type) {
+        this.type = type;
+    }
 }
