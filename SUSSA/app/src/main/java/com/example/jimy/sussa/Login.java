@@ -60,8 +60,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void authentication(String login, String senha){
-
-        if(!BDUsers.hashUsers.containsKey(login))
+        if(login.equals("professor")){
+            Toast.makeText(this,"Professor nao eh autorizado aqui!", Toast.LENGTH_SHORT).show();
+        }
+        else if(!BDUsers.hashUsers.containsKey(login))
             Toast.makeText(this,"Usuario nao encontrado",Toast.LENGTH_SHORT).show();
         else {
             User u = BDUsers.hashUsers.get(login);
